@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+  
+    "name": "YouTube Rose Theme",
+    "description": "",
+    "version": "1.1",
+    
+    "content_scripts": [
+        {
+            "matches": ["*://www.youtube.com/*"],
+            "js": ["extension.js"],
+            "run_at": "document_end"
+        }
+      ],
+      
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
