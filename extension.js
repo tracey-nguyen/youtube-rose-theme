@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 function onPageChange() {
-    const autoplay = document.querySelectorAll('div[class*="ytp-autonav-toggle-button"]');
+    const autoplay = document.querySelectorAll('button[data-tooltip-target-id*="ytp-autonav-toggle-button"]')
     autoplay.forEach(el => {
       el.remove(el);
     });
