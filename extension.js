@@ -25,6 +25,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 function onPageChange() {
     const autoplay = document.querySelectorAll('button[data-tooltip-target-id*="ytp-autonav-toggle-button"]')
     autoplay.forEach(el => {
+      el.ariaLabel = "Auto-play is off";
+      el.title = "Auto-play is off";
       el.remove(el);
     });
   }
