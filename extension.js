@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         document.documentElement.style.setProperty('--yt-swatch-icon-color', '#876b61');
         document.documentElement.style.setProperty('--yt-spec-call-to-action', '#876b61');
         document.documentElement.style.setProperty('--yt-spec-brand-subscribe-button-background', '#876b61');
-        for (let i = 0; i < document.getElementsByClassName('yt-icon-button').length; i += 1) {
+        for (let i = 0; i < document.getElementsByClassName('yt-icon-button').length; i++) {
           document.getElementsByClassName('yt-icon-button')[i].style.color = '#876b61'
         }
         onPageChange();
