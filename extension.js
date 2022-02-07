@@ -19,20 +19,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           document.getElementsByClassName('yt-icon-button')[i].style.color = '#876b61'
         }
         onPageChange();
+        setInterval(onPageChange, 10000);
     }
 });
 
 function onPageChange() {
-    const toggle = document.getElementsByClassName('ytp-autonav-toggle-button')
-    for (let i = 0; i < toggle.length; i++) {
-      toggle[i].ariaChecked = false
+    const toggle = document.getElementsByClassName('ytp-autonav-toggle-button')[0]
+    if (toggle.getAttribute('aria-checked') === 'true') {
+      toggle.click();
     }
 
     const autoplay = document.querySelectorAll('button[data-tooltip-target-id*="ytp-autonav-toggle-button"]')
     autoplay.forEach(el => {
-      el.ariaLabel = "Auto-play is off";
-      el.title = "Auto-play is off";
-      el.remove(el);
+      el.remove(el)
     });
-  }
+}
 onPageChange();
