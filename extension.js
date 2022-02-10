@@ -28,10 +28,5 @@ function onPageChange() {
     if (toggle.getAttribute('aria-checked') === 'true') {
       toggle.click();
     }
-
-    const autoplay = document.querySelectorAll('button[data-tooltip-target-id*="ytp-autonav-toggle-button"]')
-    autoplay.forEach(el => {
-      el.remove(el)
-    });
 }
 onPageChange();
